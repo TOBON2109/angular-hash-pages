@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { provideRouter } from '@angular/router';
+import { Router, provideRouter } from '@angular/router';
 import { App } from './app';
 import { routes } from './app.routes';
 
@@ -21,5 +21,17 @@ describe('App', () => {
     fixture.detectChanges();
     const links = fixture.nativeElement.querySelectorAll('nav a');
     expect(links.length).toBe(3);
+  });
+
+  it('should show the hash route in the address bar after navigating', async () => {
+    const fixture = TestBed.createComponent(App);
+    const router = TestBed.inject(Router);
+    fixture.detectChanges();
+
+    await router.navigateByUrl('/about');
+    await fixture.whenStable();
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.querySelector('.url')?.textContent).toContain('#/about');
   });
 });

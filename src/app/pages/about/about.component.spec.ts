@@ -18,6 +18,21 @@ describe('AboutComponent', () => {
   });
 
   it('should show the title', () => {
-    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Acerca de');
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Acerca del');
+  });
+
+  it('should render one chip per technology', () => {
+    const chips = fixture.nativeElement.querySelectorAll('.chips .chip');
+    expect(chips.length).toBe(fixture.componentInstance.stack.length);
+  });
+
+  it('should render one comparison row per aspect', () => {
+    const rows = fixture.nativeElement.querySelectorAll('tbody tr');
+    expect(rows.length).toBe(fixture.componentInstance.comparison.length);
+  });
+
+  it('should render one card per practice', () => {
+    const cards = fixture.nativeElement.querySelectorAll('.grid .card');
+    expect(cards.length).toBe(fixture.componentInstance.practices.length);
   });
 });

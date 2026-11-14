@@ -1,0 +1,32 @@
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #06101f;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.link-card {
+  display: block;
+  color: var(--text);
+}
+
+.link-card:hover {
+  text-decoration: none;
+}
+
+.go {
+  color: var(--accent);
+  font-weight: 600;
+}

@@ -1,9 +1,27 @@
-<nav class="nav">
-  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
-  <a routerLink="/about" routerLinkActive="active">Acerca de</a>
-  <a routerLink="/contact" routerLinkActive="active">Contacto</a>
-</nav>
+<header class="topbar">
+  <div class="brand">
+    <span class="hash">#</span>
+    <span>angular-hash-pages</span>
+  </div>
+  <nav class="nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+    <a routerLink="/about" routerLinkActive="active">Acerca de</a>
+    <a routerLink="/contact" routerLinkActive="active">Contacto</a>
+  </nav>
+</header>
+
+<div class="addressbar" aria-label="URL actual">
+  <span class="dot red"></span>
+  <span class="dot yellow"></span>
+  <span class="dot green"></span>
+  <code class="url">{{ urlBase() }}<span class="hash-part">{{ urlHash() }}</span></code>
+</div>
 
 <main class="content">
   <router-outlet />
 </main>
+
+<footer class="footer">
+  <span>Laboratorio de Pipelines · Arquitectura de Software · UCEVA</span>
+  <span>Angular · GitHub Actions · GitHub Pages</span>
+</footer>

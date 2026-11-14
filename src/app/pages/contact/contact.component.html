@@ -1,2 +1,33 @@
-<h1>Contacto</h1>
-<p>Juan Esteban Tobón Díaz</p>
+<div class="page">
+  <section class="hero">
+    <span class="badge">Hablemos</span>
+    <h1>Contacto</h1>
+    <p class="lead">Estos son mis perfiles y los enlaces de este proyecto.</p>
+  </section>
+
+  <section class="card profile">
+    <div class="avatar" aria-hidden="true">JT</div>
+    <div>
+      <h2>Juan Esteban Tobón Díaz</h2>
+      <p>Estudiante de Ingeniería de Software · UCEVA</p>
+      <div class="chips">
+        @for (skill of skills; track skill) {
+          <span class="chip">{{ skill }}</span>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Enlaces</h2>
+    <div class="grid">
+      @for (link of links; track link.url) {
+        <a class="card link-card" [href]="link.url" target="_blank" rel="noopener noreferrer">
+          <h3>{{ link.label }}</h3>
+          <p>{{ link.description }}</p>
+          <span class="go">Abrir →</span>
+        </a>
+      }
+    </div>
+  </section>
+</div>

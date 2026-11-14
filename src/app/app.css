@@ -1,4 +1,121 @@
-.nav { display: flex; gap: 16px; padding: 16px; background: #1f2937; }
-.nav a { color: #d1d5db; text-decoration: none; font-weight: 600; }
-.nav a.active { color: #fff; border-bottom: 2px solid #38bdf8; }
-.content { padding: 24px; font-family: sans-serif; }
+:host {
+  display: block;
+}
+
+.topbar,
+.addressbar,
+.content,
+.footer {
+  width: min(960px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 20px 0 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-weight: 700;
+}
+
+.hash {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #06101f;
+}
+
+.nav {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.nav a {
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.nav a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav a.active {
+  background: var(--surface-2);
+  color: var(--accent);
+}
+
+.addressbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #070b17;
+}
+
+.dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.red {
+  background: #f87171;
+}
+
+.dot.yellow {
+  background: #fbbf24;
+}
+
+.dot.green {
+  background: #34d399;
+}
+
+.url {
+  margin-left: 6px;
+  overflow-x: auto;
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.hash-part {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.content {
+  padding: 28px 0 40px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 20px 0 32px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}

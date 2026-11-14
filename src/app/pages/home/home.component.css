@@ -1,0 +1,7 @@
+.stat span {
+  color: var(--muted);
+}
+
+.code-box div {
+  white-space: pre;
+}

@@ -1,2 +1,56 @@
-<h1>Acerca de</h1>
-<p>Laboratorio de Pipelines - Arquitectura de Software.</p>
+<div class="page">
+  <section class="hero">
+    <span class="badge">Arquitectura de Software · UCEVA</span>
+    <h1>Acerca del <span class="gradient-text">laboratorio</span></h1>
+    <p class="lead">
+      Este proyecto es parte del Laboratorio de Pipelines: una aplicación Angular que se compila, se prueba y
+      se publica sola en GitHub Pages cada vez que se hace push a la rama main.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Tecnologías</h2>
+    <div class="chips">
+      @for (tech of stack; track tech) {
+        <span class="chip">{{ tech }}</span>
+      }
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Hash vs. Path</h2>
+    <p>
+      Angular puede leer la ruta desde el hash (<code>/#/about</code>) o desde la ruta normal
+      (<code>/about</code>). El laboratorio tiene una aplicación de cada tipo para poder compararlas.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Aspecto</th>
+            <th>Hash (esta app)</th>
+            <th>Path</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of comparison; track row.aspect) {
+            <tr>
+              <td>{{ row.aspect }}</td>
+              <td>{{ row.hash }}</td>
+              <td>{{ row.path }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Buenas prácticas aplicadas</h2>
+    <div class="grid">
+      @for (practice of practices; track practice) {
+        <article class="card">{{ practice }}</article>
+      }
+    </div>
+  </section>
+</div>

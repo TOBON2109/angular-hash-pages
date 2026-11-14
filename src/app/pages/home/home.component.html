@@ -1,2 +1,53 @@
-<h1>Inicio</h1>
-<p>Aplicación Angular con Hash Location Strategy.</p>
+<div class="page">
+  <section class="hero">
+    <span class="badge">Laboratorio de Pipelines · Arquitectura de Software</span>
+    <h1>Angular con <span class="gradient-text">Hash Location Strategy</span></h1>
+    <p class="lead">
+      Aplicación Angular que se prueba, se compila y se publica sola en GitHub Pages con cada push a la rama
+      main. La ruta de cada vista viaja después del símbolo #.
+    </p>
+    <div class="actions">
+      <a class="btn primary" routerLink="/about">Conocer el laboratorio</a>
+      <a class="btn" routerLink="/contact">Contacto</a>
+    </div>
+  </section>
+
+  <section class="grid" aria-label="Resumen">
+    @for (stat of stats; track stat.label) {
+      <article class="card stat">
+        <strong>{{ stat.value }}</strong>
+        <span>{{ stat.label }}</span>
+      </article>
+    }
+  </section>
+
+  <section>
+    <h2 class="section-title">¿Cómo funciona el hash?</h2>
+    <p>
+      GitHub Pages siempre entrega la misma página. Es el router de Angular, en el navegador, quien lee lo que
+      viene después del <code>#</code> y decide qué vista mostrar. Por eso esta estrategia no necesita
+      configuración extra ni un archivo <code>404.html</code>.
+    </p>
+    <div class="code-box">
+      @for (item of urlExamples; track item.hash) {
+        <div>
+          https://tobon2109.github.io/angular-hash-pages/<span class="hl">{{ item.hash }}</span> → {{ item.route }}
+        </div>
+      }
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Pipeline de despliegue</h2>
+    <ol class="steps">
+      @for (step of pipelineSteps; track step.title) {
+        <li>
+          <div>
+            <strong>{{ step.title }}</strong>
+            <p>{{ step.detail }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </section>
+</div>
